@@ -1,0 +1,37 @@
+.home {
+    background-image: url(images/wave.svg);
+    background-repeat: no-repeat;
+    background-position: top center;
+  }
+  
+  .placeholder {
+    background: #f6f7f8;
+    min-height: 300px;
+  }
+  
+  .btn-xs {
+    padding: .125rem .25rem;
+    font-size: .9rem;
+    line-height: 1.5;
+    border-radius: .2rem;
+  }
+  
+  .btn-primary {
+    color: #fff;
+    background-color: #101749;
+    border-color: #101749;
+  }
+  
+  .btn-primary:hover {
+    color: #fff;
+    background-color: #090d2a;
+    border-color: #070a1f;
+  }
+  
+  .sm2 {
+    font-size: 66.66667% !important;
+  }
+  
+  .cursor-pointer {
+    cursor: pointer !important;
+  }
