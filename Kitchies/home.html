@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitchies</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="login-bubble">
+        <i id="login-button-desktop" class="material-icons">person</i>
+    </div>
+    <nav class="mobile-nav">
+        <a>
+            <i id="login_button" class="material-icons">person</i>
+        </a>
+        <h2 class="nav_logo">Kitchies</h2>
+        <div id="burger_menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+       
+        
+    </nav>
+    <a id="remove-dishes"><i class="fa fa-trash-o" style="font-size:48px;color:red"></i></a>
+    <button id="add-dish" style="display: none;">Add</button>
+    <div id="mobile_menu">
+        <i class="fa fa-arrow-left" id="back" style="font-size:2em;"></i>
+        <div class="search">
+            <input type="text" placeholder="Search your favorite food">
+            <i class="fa fa-search" style="font-size: 1.5em;"></i>
+        </div>
+        <a href="home.html">Home</a>
+        <a href="home.html?Asia">Món Á</a>
+        <a href="home.html?Europe">Món Âu</a>
+        <a href="home.html?QuickCook">Món nấu nhanh</a>
+        <a href="home.html?Snack">Ăn vặt</a>
+        <a href="home.html?Drink">Đồ uống</a>
+        <a href="home.html?Spice">Gia vị</a>
+        <a href="#footer">About us</a>
+    </div>
+
+    <div class="header">
+        <header class="btns">
+
+        <div class="background-login">
+            <div class="login" id="loginForm">
+                <h2>Member Login</h2>
+                <input type="username" placeholder="username">
+                <input type="password" placeholder="password">
+                <button id="enter">Login</button>
+                <button id="create">Register</button>
+            </div>
+        </div>
+        <br>
+        <div class="background-register">
+            <div class="register" id="registerForm">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="tel email" name="phone" placeholder="email or phone number" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+                <input type="password" name="password" placeholder="Password" required>
+                <input type="password" name="password" placeholder="Retype-Password" required>
+                <button>Create</button>
+            </div>    
+        </div>
+        
+        <script>
+            let log_btn_dsk = document.getElementById("login-button-desktop");
+            let log_btn = document.getElementById("login_button");
+            let login_form = document.getElementById("loginForm");
+            let reg_form = document.getElementById("registerForm");
+            let create = document.getElementById("create");
+            let loginFormWrapper = document.querySelector(".background-login")
+            let registerFormWrapper = document.querySelector(".background-register");
+            log_btn_dsk.onclick = function() {
+                loginFormWrapper.classList.add("background-login-active");
+                login_form.style.display = "flex";
+            };
+            log_btn.onclick = function() {
+                loginFormWrapper.classList.add("background-login-active");
+                login_form.style.display = "flex";
+            };
+            create.addEventListener("click", function() {
+                login_form.style.display = "none";
+                registerFormWrapper.classList.add("background-register-active");
+                reg_form.style.display = "flex";
+            });
+            window.onclick = function(event) {
+                if (event.target != log_btn_dsk && event.target != login_form && event.target != log_btn && event.target != create) {
+                    loginFormWrapper.classList.remove("background-login-active");
+                    registerFormWrapper.classList.remove("background-register-active");
+                    login_form.style.display = "none";
+                    reg_form.style.display = "none";
+                }
+            }; 
+        </script>
+        
+        </header>
+        <h1>Kitchies</h1>
+        <p>Bring whole the world to your kitchen</p>
+    </div>
+
+    <script>
+        let bur_btn = document.getElementById("burger_menu");
+        let menu_inside = document.getElementById("mobile_menu");
+        let back = document.getElementById("back");
+        bur_btn.onclick = function() {
+            menu_inside.classList.add("menu-inside");
+        }
+        back.onclick = function() {
+            menu_inside.classList.remove("menu-inside");
+        }
+    </script>
+    <div class="menu">
+        <a href="home.html">Home</a>
+        <a href="home.html?Asia">Món Á</a>
+        <a href="home.html?Europe">Món Âu</a>
+        <a href="home.html?QuickCook">Món nấu nhanh</a>
+        <a href="home.html?Snack">Ăn vặt</a>
+        <a href="home.html?Drink">Đồ uống</a>
+        <a href="home.html?Flavor">Gia vị</a>
+        <a href="#footer">About us</a>
+        <form autocomplete="off" action="/action_page.php">
+            <div class="autocomplete" style="width:300px;">
+              <input id="hiding-search" type="text" name="names-for-search" placeholder="Search your favorite food">
+            </div>
+        </form>
+        <i class="fa fa-search" id="searching" style="font-size: 2em;"></i>
+    </div>
+    <script>
+        let search_bar = document.getElementById("hiding-search");
+        let search_icon = document.getElementById("searching");
+        search_icon.onclick = function() {
+            search_bar.style.display = "block";
+        }
+    </script>
+    <div class="content"></div>
+    
+    <div class="footer" id="footer">
+        <div class="content1">
+        <h1>CONTENT</h1>
+        <p>C4EJS100 - TEAM Damdang Bois</p>
+        </div>
+        <div class="about">
+            <h1>ABOUT</h1>
+            <p>Nam Ngo</p>
+            <p>Huy Nguyen</p>
+            <p>Long Abc</p>
+            <p>Thanh Xyz</p>
+        </div>
+        <div class="address">
+            <h1>ADDRESS</h1>
+            <i class="fa fa-home"> New York, NY 10012, US</i><br>
+            <i class="fa fa-phone"> + 01 234 567 88</i><br>
+            <i class="fa fa-mail-forward"> info@example.com</i><br>
+            <i class="fa fa-fax"> + 01 234 567 89</i>
+        </div>
+        <div class="follow">
+            <h1>FOLLOW US</h1>
+            <div class="social_network">
+                <i class="fa fa-facebook-square"></i><br>
+                <i class="fa fa-instagram"></i><br>
+                <i class="fa fa-google-plus"></i><br>
+                <i class="fa fa-linkedin"></i><br>
+                <i class="fa fa-youtube-play"></i>
+            </div>
+            
+        </div>
+    <script src="data.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>

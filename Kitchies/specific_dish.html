@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specific dish</title>
+    <link rel="stylesheet" href="style1.css">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="login-bubble">
+        <i id="login-button-desktop" class="material-icons">person</i>
+    </div>
+    <nav class="mobile-nav">
+        <a>
+            <i id="login_button" class="material-icons">person</i>
+        </a>
+        <h2 class="nav_logo">Kitchies</h2>
+        <div id="burger_menu">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+       
+        
+    </nav>
+
+
+    <div id="mobile_menu">
+        <i class="fa fa-arrow-left" id="back" style="font-size:2em;"></i>
+        <div class="search">
+            <input type="text" placeholder="Search your favorite food">
+            <i class="fa fa-search" style="font-size: 1.5em;"></i>
+        </div>
+        <a href="home.html">Home</a>
+        <a href="#">Món Á</a>
+        <a href="#">Món Âu</a>
+        <a href="#">Món nấu nhanh</a>
+        <a href="#">Ăn vặt</a>
+        <a href="#">Đồ uống</a>
+        <a href="#">Gia vị</a>
+        <a href="#">About us</a>
+    </div>
+
+    <div class="header">
+        <header class="btns">
+
+            <div class="background-login">
+                <div class="login" id="loginForm">
+                    <h2>Member Login</h2>
+                    <input type="username" placeholder="username">
+                    <input type="password" placeholder="password">
+                    <button id="enter">Login</button>
+                    <button id="create">Register</button>
+                </div>
+            </div>
+            <br>
+            <div class="background-register">
+                <div class="register" id="registerForm">
+                    <input type="text" name="username" placeholder="Username" required>
+                    <input type="tel email" name="phone" placeholder="email or phone number" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+                    <input type="password" name="password" placeholder="Password" required>
+                    <input type="password" name="password" placeholder="Retype-Password" required>
+                    <button>Create</button>
+                </div>    
+            </div>
+            
+            <script>
+                let log_btn_dsk = document.getElementById("login-button-desktop");
+                let log_btn = document.getElementById("login_button");
+                let login_form = document.getElementById("loginForm");
+                let reg_form = document.getElementById("registerForm");
+                let create = document.getElementById("create");
+                let loginFormWrapper = document.querySelector(".background-login")
+                let registerFormWrapper = document.querySelector(".background-register");
+                log_btn_dsk.onclick = function() {
+                    loginFormWrapper.classList.add("background-login-active");
+                    login_form.style.display = "flex";
+                };
+                log_btn.onclick = function() {
+                    loginFormWrapper.classList.add("background-login-active");
+                    login_form.style.display = "flex";
+                };
+                create.addEventListener("click", function() {
+                    login_form.style.display = "none";
+                    registerFormWrapper.classList.add("background-register-active");
+                    reg_form.style.display = "flex";
+                });
+                window.onclick = function(event) {
+                    if (event.target != log_btn_dsk && event.target != login_form && event.target != log_btn && event.target != create) {
+                        loginFormWrapper.classList.remove("background-login-active");
+                        registerFormWrapper.classList.remove("background-register-active");
+                        login_form.style.display = "none";
+                        reg_form.style.display = "none";
+                    }
+                }; 
+            </script>
+            
+        </header>
+        
+        <h1>Kitchies</h1>
+        <p>Share difference recipes...</p>
+    </div>
+    <script>
+        let bur_btn = document.getElementById("burger_menu");
+        let menu_inside = document.getElementById("mobile_menu");
+        let back = document.getElementById("back");
+        bur_btn.onclick = function() {
+            menu_inside.classList.add("menu-inside");
+        }
+        back.onclick = function() {
+            menu_inside.classList.remove("menu-inside");
+        }
+    </script>
+    <div class="menu">
+        <a href="home.html">Home</a>
+        <a href="home.html?Asia">Món Á</a>
+        <a href="home.html?Europe">Món Âu</a>
+        <a href="home.html?QuickCook">Món nấu nhanh</a>
+        <a href="home.html?Snack">Ăn vặt</a>
+        <a href="home.html?Drink">Đồ uống</a>
+        <a href="home.html?Flavor">Gia vị</a>
+        <a href="#footer">About us</a>
+        <input type="text" id="hiding-search"placeholder="Search your favorie food">
+        <i class="fa fa-search" id="searching" style="font-size: 2em;"></i>
+        
+    </div>
+    <div class="content">
+        <div class="content_side">
+        <div class="intro">
+            <h3>Buy me a coffee</h3>
+            <p>Nếu các bạn cảm thấy yêu thích trang blog này, các bạn có thể ủng hộ mình để mình có thêm kinh phí làm thêm nhiều món ngon chia sẻ với mọi người. Sự đóng góp của các bạn là nguồn động viên lớn lao cho mình. Cám ơn các bạn!
+            </p>
+            <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=CKVGQK3B95WZU&amp;source=url" target="_blank" rel="nofollow noopener"><img src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" alt="" scale="0"></a>
+        </div>
+        <div class="lately">
+            <h3>Bài viết gần đây</h3>
+            <ul>
+                <li><a href="specific_dish.html?1">>>Chà bông rong biển Đài Loan (taiwan pork floss) </a><span class="post-date">7. November 2020</span></li>
+                <li><a href="specific_dish.html?6">>>Salad Táo</a><span class="post-date">25. October 2020</span></li>
+                <li><a href="specific_dish.html?2">>>Thịt kho Tô Đông Pha - Braised pork belly Dong Po Rou</a><span class="post-date">18. October 2020</span></li>
+                <li><a href="specific_dish.html?3">>>Cháo ếch Singapore - Frog leg porridge </a><span class="post-date">11. October 2020</span></li>
+                <li><a href="specific_dish.html?8">>>Cách làm tương XO (sốt sò điệp Hongkong)-homemade Hongkong XO sauce </a><span class="post-date">23. September 2020</span></li>
+            </ul>
+        </div>
+        <div class="recipe">
+            <h3>CÔNG THỨC</h3>
+            <a href="home.html?Flavor"> >>Các loại gia vị</a>
+            <li>
+                <a href="home.html?Asia"> >>Các món Á </a>
+                <ul>
+                <li><a href="home.html?Asia">>>Ẩm thực Ấn Độ </a></li>
+                <li><a href="home.html?Asia">>>Ẩm thực Hàn Quốc </a></li>
+                <li><a href="home.html?Asia">>>Ẩm thực Hongkong </a></li>
+                <li><a href="home.html?Asia">>>Ẩm thực Lào </a></li>
+                <li><a href="home.html?Asia">>>Ẩm thực Malaysia </a></li>
+                <li><a href="home.html?Asia">>>Ẩm thực Nhật Bản</a></li>
+                <li><a href="home.html?Asia">>>Ẩm thực Philippines </a></li>
+                <li><a href="home.html?Asia">>>Ẩm thực Philippines </a></li>
+                <li><a href="home.html?Asia">>>Ẩm thực Singapore </a></li>
+                <li><a href="home.html?Asia">>>Ẩm thực Thái Lan </a></li>
+                <li><a href="home.html?Asia">>>Ẩm thực Trung Hoa</a></li>
+                <li><a href="home.html?Asia">>>Ẩm thực Việt Nam </a></li>
+                <li><a href="home.html?Asia">>>Ẩm thực Đài Loan </a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="home.html?Europe"> >> Các món Âu </a>
+                <ul><li><a href="home.html?Europe">>> Ẩm thực Ý </a></li></ul>
+            </li>
+            <li><a href="home.html?QuickCook"> >> Món nấu nhanh </a></li>
+            <li>
+                <a href="home.html?Snack"> >> Mục ăn vặt </a>
+                <ul>
+                    <li><a href="home.html?Snack">>> Bánh ngọt </a></li>
+                    <li><a href="home.html?Snack">>> Chè </a></li>
+                    <li><a href="home.html?Snack">>> Desert, Pudding </a></li>
+                    <li><a href="home.html?Snack">>> Đồ nhâm nhi</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="home.html?Drink">>>Đồ uống </a>
+            </li>
+        </ul>
+        </div>
+    </div>
+    </div>
+    
+</div>
+    <div class="footer" id="footer">
+        <div class="content1">
+        <h1>CONTENT</h1>
+        <p>C4EJS100 - TEAM Damdang Bois</p>
+        </div>
+        <div class="about">
+            <h1>ABOUT</h1>
+            <p>Nam Ngo</p>
+            <p>Huy Nguyen</p>
+            <p>Long Abc</p>
+            <p>Thanh Xyz</p>
+        </div>
+        <div class="address">
+            <h1>ADDRESS</h1>
+            <i class="fa fa-home"> New York, NY 10012, US</i><br>
+            <i class="fa fa-phone"> + 01 234 567 88</i><br>
+            <i class="fa fa-mail-forward"> info@example.com</i><br>
+            <i class="fa fa-fax"> + 01 234 567 89</i>
+        </div>
+        <div class="follow">
+            <h1>FOLLOW US</h1>
+            <div class="social_network">
+                <i class="fa fa-facebook-square"></i><br>
+                <i class="fa fa-instagram"></i><br>
+                <i class="fa fa-google-plus"></i><br>
+                <i class="fa fa-linkedin"></i><br>
+                <i class="fa fa-youtube-play"></i>
+            </div>
+            
+        </div>
+        <script src="data.js"></script>
+        <script src="index1.js"></script>
+</body>
+</html>
