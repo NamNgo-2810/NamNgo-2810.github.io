@@ -72,50 +72,6 @@
       </div>
     </div>
   </div>
-  
-  <!-- <section class="container py-4 my-4 text-center bg-lighter shadow">
-    <h2 id="how" class="h5 py-3 font-weight-bold">How it works</h2>
-    <div class="col-md-9 mx-auto text-justify">
-      <p>
-        We used Generative Adversarial Network (GAN) model proposed in 
-        <a target="_blank" href="https://openaccess.thecvf.com/content_CVPR_2020/html/Wang_Learning_to_Cartoonize_Using_White-Box_Cartoon_Representations_CVPR_2020_paper.html">
-          Learning to Cartoonize Using White-box Cartoon Representations</a> (CVPR 2020) by
-        Xinrui Wang and Jinze Yu.
-        Our idea was to test if it is reasonably possible to perform model inferences in
-        the browser clients with CPUs only. Without needing to send any of user's data (images) to servers.
-      </p>
-      <p>Here's the application flow and architecture:</p>
-      <img class="d-block img-fluid mx-auto p-4" src="./assets/flow.jpg">
-      <p>
-        <a href="https://www.tensorflow.org/">TensorFlow</a> Saved models are converted to 
-        <a href="https://www.tensorflow.org/js/">TensorFlow.js</a> models.
-        Images are padded and scaled to 256px before they are fed to the model.
-        This rescaling is done to speed up the processing and might reduce the quality too.</p>
-      <p>
-        Model footprint is ~1.5MB. These models in the browsers without GPU acceleration could manage to cartoonize,
-        but takes anywhere between 5-10 seconds for processing.
-        This is much slower than tflite models performance in mobile devices.
-        However, web browsers benefit from users not needing to install anything or transmitting data outside of their systems.
-      </p>
-      <h2 class="h6">Credits</h2>
-      <ul class="small pl-3">
-        <li>
-          Original paper: <a target="_blank" href="https://openaccess.thecvf.com/content_CVPR_2020/html/Wang_Learning_to_Cartoonize_Using_White-Box_Cartoon_Representations_CVPR_2020_paper.html">
-            Learning to Cartoonize Using White-box Cartoon Representations</a> (CVPR 2020) by
-          Xinrui Wang and Jinze Yu.
-        </li>
-        <li>
-          <a target="_blank" href="https://blog.tensorflow.org/2020/09/how-to-create-cartoonizer-with-tf-lite.html">TensorFlow Lite conversion</a>: by
-          <a target="_blank" href="https://twitter.com/margaretmz">Margaret Maynard-Reid</a> and
-          <a target="_blank" href="https://twitter.com/RisingSayak">Sayak Paul</a>.
-        </li>
-        <li>
-          App made by <a target="_blank" href="https://twitter.com/PratapVardhan">Nam Ngo</a>
-        </li>
-      </ul>
-
-    </div>
-  </section> -->
 
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-wasm/dist/tf-backend-wasm.js"></script>
