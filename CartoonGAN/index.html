@@ -11,6 +11,21 @@
   <title>Cartoonize your pictures</title>
   <meta name="description" content="Cartoonize your pictures  in browser with TensorFlow.js" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-42126862-1"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-storage.js"></script>
+
+  <script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyDlrJWmQdTcnt-VxgYFN9ic0aqhm_ikOSM",
+      authDomain: "cartoongan-namngo2810.firebaseapp.com",
+      projectId: "cartoongan-namngo2810",
+      storageBucket: "cartoongan-namngo2810.appspot.com",
+      messagingSenderId: "824953169041",
+      appId: "1:824953169041:web:2193643aced145fb728b30",
+      measurementId: "G-YS6NCSFW2N"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
   <script>
     /* global dataLayer */
     window.dataLayer = window.dataLayer || [];
@@ -43,11 +58,23 @@
       <div class="card-body px-0 px-sm-2">
         <div class="">
           <label class="btn btn-primary btn-xs px-2">
-            Upload your Image <input type="file" id="file" name="file" accept="image/*" hidden>
+            Upload your Image <input type="file" id="file" name="file" accept="image/*" hidden onChange="send()">
           </label>
-          <span>or Try <a href="#examples">below examples</a></span>
+          <span>or Try below examples</a></span>
         </div>
         <img id="source" class="d-block img-fluid mx-auto" src="images/Thy.jpg"></img>
+        <script>
+        function send() {
+          const ref = firebase.storage().ref();
+          const file = document.querySelector("#file").files[0];
+          const name = file.name + "-" + new Date();
+          const metadata = {
+            contentType: "image"
+          }
+          const task = ref.child(name).put(file, metadata);
+          console.log("Sent!");
+        }
+        </script>
         <div id="examples" class="mt-2">
           <span class="sm2">Click on the images to try</span>
           <div class="row px-3">
