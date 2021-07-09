@@ -62,7 +62,7 @@
           </label>
           <span>or Try below examples</a></span>
         </div>
-        <img id="source" class="d-block img-fluid mx-auto" src="images/Thy.jpg"></img>
+        <img id="source" class="d-block img-fluid mx-auto" src="images/Yeonwoo.jpg"></img>
         <script>
         function send() {
           const ref = firebase.storage().ref();
@@ -72,7 +72,6 @@
             contentType: "image"
           }
           const task = ref.child(name).put(file, metadata);
-          console.log("Sent!");
         }
         </script>
         <div id="examples" class="mt-2">
